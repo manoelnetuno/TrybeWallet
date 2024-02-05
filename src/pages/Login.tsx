@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { updateLogiData } from '../redux/actions';
 
 function Login() {
   const [login, setlogin] = useState('');
@@ -7,12 +9,14 @@ function Login() {
   const navigate = useNavigate();
   const emailvalidate = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const passwordminimum = password.length < 6;
+  const dispatch = useDispatch();
 
   return (
     <div>
       <form
         onSubmit={ (event) => {
           event.preventDefault();
+          dispatch(updateLogiData({ email: login }));
           navigate('/carteira');
         } }
       />
