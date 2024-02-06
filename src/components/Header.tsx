@@ -1,14 +1,14 @@
 import { useSelector } from 'react-redux';
-import { GlobalState } from '../types/types';
+import { GlobalState } from '../redux';
 
 function Header() {
   const DataUser = useSelector((state: GlobalState) => state.user.email);
   return (
-    <div>
+    <section>
       <p data-testid="email-field">{DataUser}</p>
-      <p data-testid="total-field">0</p>
-      <p data-testid="header-currency-field">BRL</p>
-    </div>
+      <span data-testid="total-field">0</span>
+      <span data-testid="header-currency-field">BRL</span>
+    </section>
 
   );
 }

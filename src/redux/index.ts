@@ -7,4 +7,6 @@ const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk
 if (window.Cypress) {
   window.store = store;
 }
+export type GlobalState = ReturnType<typeof store.getState>;
+
 export default store;
