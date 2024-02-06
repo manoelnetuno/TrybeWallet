@@ -1,4 +1,3 @@
-
 import { AnyAction } from 'redux';
 import { LOGIN_DATA } from '../actions';
 
