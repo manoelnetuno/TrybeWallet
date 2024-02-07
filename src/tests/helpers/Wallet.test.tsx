@@ -1,11 +1,21 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 import { renderWithRouterAndRedux } from './renderWith';
 import Header from '../../components/Header';
 import Wallet from '../../pages/Wallet';
 import WalletForm from '../../components/WalletForm';
+import mockData from './mockData';
 
 describe('Testes na página do Wallet', () => {
+  const mockFetch = () => Promise.resolve({
+    status: 200,
+    ok: true,
+    json: () => Promise.resolve(mockData),
+  });
+  beforeEach(() => {
+    vi.spyOn(global, 'fetch').mockImplementation(mockFetch as any);
+  });
   test('renderiza os componentes Header e WalletForm', () => {
     renderWithRouterAndRedux(<Wallet />);
 

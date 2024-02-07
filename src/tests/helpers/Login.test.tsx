@@ -1,13 +1,23 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 import { renderWithRouterAndRedux } from './renderWith';
 import Login from '../../pages/Login';
 import App from '../../App';
+import mockData from './mockData';
 
 const inputTestId = 'email-input';
 const passwordInputId = 'password-input';
 
 describe('Login Page', () => {
+  const mockFetch = () => Promise.resolve({
+    status: 200,
+    ok: true,
+    json: () => Promise.resolve(mockData),
+  });
+  beforeEach(() => {
+    vi.spyOn(global, 'fetch').mockImplementation(mockFetch as any);
+  });
   test('renderiza os campos de email e senha', () => {
     renderWithRouterAndRedux(<Login />, { initialEntries: ['/'] });
 
