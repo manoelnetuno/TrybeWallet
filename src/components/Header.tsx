@@ -5,7 +5,10 @@ function Header() {
   const DataUser = useSelector((state: GlobalState) => state.user.email);
   const DataExpense = useSelector((state: GlobalState) => state.wallet.expenses);
   const totalExpense = () => {
-    return DataExpense.reduce((total: number, { value, exchangeRates, currency }: any) => {
+    return DataExpense.reduce((
+      total: number,
+      { value, exchangeRates, currency }: any,
+    ) => {
       total += +value * +exchangeRates[currency].ask;
       return total;
     }, 0);

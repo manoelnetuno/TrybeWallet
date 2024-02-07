@@ -1,5 +1,5 @@
-import { WalletAction } from "../../types/WalletAção";
-import { WalletType } from "../../types/WalletTypes";
+import { WalletAction } from '../../types/WalletAção';
+import { WalletType } from '../../types/WalletTypes';
 import { UPDATE_CURRENCY, UPDATE_EXPENSES } from '../actions';
 
 const INITIAL_STATE: WalletType = {
