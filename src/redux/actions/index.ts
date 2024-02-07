@@ -28,3 +28,9 @@ export const updateExpenses = (expense: ExpenseType) => ({
   type: UPDATE_EXPENSES,
   payload: expense,
 });
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+
+export const deleteExpense = (id: number) => ({
+  type: DELETE_EXPENSE,
+  payload: id,
+});
