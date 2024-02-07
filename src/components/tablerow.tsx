@@ -30,7 +30,6 @@ function TableRow({ item }: TableRowProps) {
           Excluir
         </button>
       </td>
-      <td />
     </tr>
   );
 }
