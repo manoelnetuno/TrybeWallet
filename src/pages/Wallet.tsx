@@ -6,7 +6,6 @@ function Wallet() {
     <div>
       <Header />
       <WalletForm />
-      <p> hello world</p>
     </div>
   );
 }
