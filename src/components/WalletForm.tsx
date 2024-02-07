@@ -34,6 +34,7 @@ function WalletForm() {
   return (
     <section>
       <form
+        data-testid="wallet-form-component"
         onSubmit={ async (e) => {
           e.preventDefault();
           const currencies = await getApi();
@@ -100,7 +101,11 @@ function WalletForm() {
           <option value="Saúde">Saúde</option>
         </select>
 
-        <button>Adicionar despesa</button>
+        <button
+          data-testid="add-expense-button"
+        >
+          Adicionar despesa
+        </button>
 
       </form>
     </section>

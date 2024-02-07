@@ -14,11 +14,11 @@ function Header() {
     }, 0);
   };
   return (
-    <section>
+    <header data-testid="header-component">
       <p data-testid="email-field">{DataUser}</p>
       <p data-testid="total-field">{totalExpense().toFixed(2)}</p>
       <p data-testid="header-currency-field">BRL</p>
-    </section>
+    </header>
 
   );
 }

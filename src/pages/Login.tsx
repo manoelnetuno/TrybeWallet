@@ -13,6 +13,7 @@ function Login() {
 
   return (
     <div>
+      <h1>Trybe</h1>
       <form
         onSubmit={ (event) => {
           event.preventDefault();
@@ -39,6 +40,7 @@ function Login() {
           required
         />
         <button
+          data-testid="login-button"
           type="submit"
           disabled={ passwordminimum() || !emailvalidate.test(login) }
         >

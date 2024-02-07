@@ -5,6 +5,7 @@ import Table from '../components/Table';
 function Wallet() {
   return (
     <div>
+      <h1>TrybeWallet</h1>
       <Header />
       <WalletForm />
       <Table />
