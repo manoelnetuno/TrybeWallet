@@ -5,7 +5,7 @@ import TableRow from './tablerow';
 function Table() {
   const expenses = useSelector((state: GlobalState) => state.wallet.expenses);
   return (
-    <section>
+    <section data-testid="tablerow-id">
       <table>
         <thead>
           <tr>

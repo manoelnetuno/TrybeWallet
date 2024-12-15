@@ -8,7 +8,7 @@ function Wallet() {
       <h1>TrybeWallet</h1>
       <Header />
       <WalletForm />
-      <Table data-test="table-id" />
+      <Table />
     </div>
   );
 }
